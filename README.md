@@ -1,2 +1,2 @@
 # i3_config
-My i3 config
+Place all files in ~/.i3.
