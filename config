@@ -26,6 +26,9 @@ font pango:DejaVu Sans Mono 8
 # Set speaker volume on startup on 0%
 exec --no-startup-id pactl set-sink-volume 1 0%
 
+# Start network-manager applet
+exec --no-startup-id nm-applet
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
