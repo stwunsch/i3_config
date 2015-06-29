@@ -42,7 +42,7 @@ bindsym $mod+Shift+s exec systemctl suspend
 bindsym $mod+Shift+q kill
 
 # activate lock-screen
-bindsym $mod+Shift+d exec i3lock
+bindsym $mod+Shift+d exec i3lock -c 000000
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +5% #increase sound volume
