@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Run script only if a variable is given
+if [ "$1" != "" ]
+then
+    # Get max value from 'max_brightness'
+    MAX_BRIGHTNESS=`cat /sys/class/backlight/intel_backlight/max_brightness`
+    MIN_BRIGHTNESS=$(expr $MAX_BRIGHTNESS / 10)
+
+    # Calculate new brigthness values
+    ACTUAL_BRIGHTNESS=`cat /sys/class/backlight/intel_backlight/actual_brightness`
+    NEW_BRIGHTNESS=$(expr $1 \* $MAX_BRIGHTNESS / 100)
+    if [ "$NEW_BRIGHTNESS" -gt "$MAX_BRIGHTNESS" ]
+    then
+        NEW_BRIGHTNESS=$MAX_BRIGHTNESS
+    elif [ "$NEW_BRIGHTNESS" -lt "$MIN_BRIGHTNESS" ]
+    then
+        NEW_BRIGHTNESS=$MIN_BRIGHTNESS
+    fi
+
+    # Increase/decrease the current value by the given percentage
+    tee /sys/class/backlight/intel_backlight/brightness <<< $NEW_BRIGHTNESS
+fi
