@@ -5,7 +5,7 @@ status = Status(standalone=True)
 # Displays clock like this:
 # Tue 30 Jul 11:59:46 PM KW31
 status.register("clock",
-    format="%a %-d %b %X",)
+    format="%a %-d %b %H:%M",)
 
 # This would look like this:
 # Discharging 6h:51m
