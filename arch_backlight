@@ -5,7 +5,7 @@ if [ "$1" != "" ]
 then
     # Get max value from 'max_brightness'
     MAX_BRIGHTNESS=`cat /sys/class/backlight/intel_backlight/max_brightness`
-    MIN_BRIGHTNESS=$(expr $MAX_BRIGHTNESS / 10)
+    MIN_BRIGHTNESS=$(expr $MAX_BRIGHTNESS / 100 \* 5)
 
     # Calculate new brigthness values
     ACTUAL_BRIGHTNESS=`cat /sys/class/backlight/intel_backlight/actual_brightness`
