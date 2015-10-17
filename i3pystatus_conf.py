@@ -47,7 +47,7 @@ status.register("disk",
 # Show uptime
 status.register("uptime",
     interval=globInterval,
-    format="UP {hours}:{mins}",)
+    format="UP {hours}h:{mins}m",)
 
 # Shows pulseaudio default sink volume
 #
