@@ -42,4 +42,9 @@ status.register("disk",
 status.register("pulseaudio",
     format="♪{volume}%",)
 
+# Show backlight percentage
+status.register("backlight",
+        format="☀{percentage}%",
+        base_path="/sys/class/backlight/intel_backlight/",)
+
 status.run()
