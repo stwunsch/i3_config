@@ -15,7 +15,7 @@ status.register("clock",
 # Discharging 6h:51m
 status.register("battery",
     interval=globInterval,
-    format="{status} {remaining:%E%hh:%Mm}",
+    format="{status} {percentage:02.0f}% {remaining:%E%hh:%Mm}",
     alert=True,
     alert_percentage=10,
     status={
@@ -34,7 +34,7 @@ status.register("network",
 status.register("network",
     interval=globInterval,
     interface="wlp4s0",
-    format_up="{essid} {quality:03.0f}%",)
+    format_up="{essid} {quality:02.0f}%",)
 
 # Shows disk usage of /
 # Format:
