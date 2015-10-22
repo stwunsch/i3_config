@@ -8,5 +8,11 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
-# Erase doubles in history
+# ignore doubles in history
 export HISTCONTROL=ignoreboth
+
+# set PYTHONPATH for gnuradio
+export PYTHONPATH=${PYTHONPATH}:/usr/local/lib/python2.7/site-packages
+
+# set LD_LIBRARY_PATH for gnuradio
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/lib:/usr/local/lib
