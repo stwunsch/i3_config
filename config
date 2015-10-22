@@ -50,8 +50,8 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume 1 -5% #decrease sound vo
 bindsym XF86AudioMute exec pactl set-sink-mute 1 toggle # mute sound
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
