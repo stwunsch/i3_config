@@ -24,18 +24,6 @@ status.register("battery",
         "FULL": "FULL",
     },)
 
-# Note: the network module requires PyPI package netifaces
-status.register("network",
-    interval=globInterval,
-    interface="enp0s25",
-    format_up="{v4cidr}",)
-
-# Note: requires both netifaces and basiciw (for essid and quality)
-status.register("network",
-    interval=globInterval,
-    interface="wlp4s0",
-    format_up="{essid} {quality:02.0f}%",)
-
 # Shows disk usage of /
 # Format:
 # 42/128G [86G]
@@ -60,5 +48,17 @@ status.register("backlight",
     interval=globInterval,
     format="☀{percentage}%",
     base_path="/sys/class/backlight/intel_backlight/",)
+
+# Note: the network module requires PyPI package netifaces
+status.register("network",
+    interval=globInterval,
+    interface="enp0s25",
+    format_up="{v4cidr}",)
+
+# Note: requires both netifaces and basiciw (for essid and quality)
+status.register("network",
+    interval=globInterval,
+    interface="wlp4s0",
+    format_up="{essid} {quality:02.0f}%",)
 
 status.run()
