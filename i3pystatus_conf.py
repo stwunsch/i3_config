@@ -62,6 +62,7 @@ status.register("network",
     format_up="{essid} {quality:02.0f}%",)
 
 # Show active VPN connections
+# Note: Assumes you are using the network-manager to establish the OpenVPN connection
 for vpn in ["KIT", "Datenfestung"]:
     status.register("openvpn",
         interval=globInterval,
