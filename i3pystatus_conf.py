@@ -61,4 +61,11 @@ status.register("network",
     interface="wlp4s0",
     format_up="{essid} {quality:02.0f}%",)
 
+# Show active VPN connections
+for vpn in ["KIT", "Datenfestung"]:
+    status.register("openvpn",
+        interval=globInterval,
+        vpn_name=vpn,
+        status_command="bash -c 'nmcli connection show --active | grep %(vpn_name)s'",)
+
 status.run()
