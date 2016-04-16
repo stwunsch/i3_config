@@ -1,0 +1,8 @@
+#
+# ~/.bash_profile
+#
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+
+# Start X server on tty login if no instance is started yet
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
