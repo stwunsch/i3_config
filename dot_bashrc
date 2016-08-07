@@ -5,14 +5,20 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# redefine ls
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
 # ignore doubles in history
 export HISTCONTROL=ignoreboth
 
-# set PYTHONPATH for gnuradio
+# set paths for gnuradio
 export PYTHONPATH=${PYTHONPATH}:/usr/local/lib/python2.7/site-packages
-
-# set LD_LIBRARY_PATH for gnuradio
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/lib:/usr/local/lib
+
+# mount/umount tresor
+alias tresor_mount='sudo mount /dev/sdb1 /mnt/tresor'
+alias tresor_umount='sudo umount /mnt/tresor'
+
+# use vi key-bindings
+set -o vi
